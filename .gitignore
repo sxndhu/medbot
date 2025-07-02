@@ -20,6 +20,7 @@ staticfiles/
 local_settings.py
 
 # Ignore environment variables and secrets
+thesis/
 .env
 *.env
 *.key
