@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Update Patient {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="display-3">Update Details</h1>
+    </br>
+
+    <form method="POST" action="{% url 'updatepatientdata' patient.id %}">
+        {% csrf_token %}
+
+        {{ form|crispy }}
+
+        <input class="btn btn-outline-primary" type="submit" value="Update" />
+    </form>
+</br>
+</div>
+
+{% endblock %}

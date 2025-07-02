@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.mo
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Ignore environment variables and secrets
+.env
+*.env
+*.key
+*.pem
+secrets.json
+config.json
+chatapp/open_ai_key.py
+
+# VS Code
+.vscode/
+
+# macOS / Windows / Linux OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.swp
+*~
+
+# PostgreSQL dumps
+*.dump
+*.sql
+
+# Jupyter / IPython (if used)
+.ipynb_checkpoints/
+
+# Shell history
+*.bash_history
+*.zsh_history
+
+# Python virtual environments
+venv/
+.env/
+ENV/
+env/

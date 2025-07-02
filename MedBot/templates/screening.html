@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %} Screening {% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="display-3">Screening Patient</h1>
+<small class="text-muted">Answering all may not be necesssary, depending on the first question, use professional judgement for the remaining.</small>
+</br>
+</br>
+{% if response %}
+<div class="message-text">
+  <div class="p-3 mb-2 bg-info-subtle text-emphasis-info">
+    <div class="message-content">
+      {{response}}
+    </div>
+  </div>
+</div>
+{% endif %}
+    <form class="row" autocomplete="off" method="POST" action="{% url 'screening' %}">
+  
+      {% csrf_token %}
+      <div class="form-group">
+        <label>What brings you here today?</label></br>
+        <input type="text" class="form-control" name="answer1"></br>
+      </div>
+    
+      <div class="form-group">
+        <label>Where does it hurt and does it radiate?</label></br>
+        <input type="text" class="form-control" name="answer2"></br>
+      </div>
+
+      <div class="form-group">
+        <label>When did it start/how long has it been going on for?</label></br>
+        <input type="text" class="form-control"name="answer3"></br>        
+      </div>
+
+
+      <div class="form-group">
+        <label>Is it a new problem?</label></br>
+        <input type="text" class="form-control" name="answer4"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>What is the quality of the pain? (Dull, sharp/knife like, achy, tightness, tingling, etc.)</label></br>
+        <input type="text" class="form-control" name="answer5"> </br>  
+      </div>
+
+      <div class="form-group">
+        <label>What triggered the symptoms??</label></br>
+        <input type="text" class="form-control" name="answer6"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>What makes it better or worse?</label></br>
+        <input type="text" class="form-control" name="answer7"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>Any recent illnesses? (Infections, allergies, etc.)</label></br>
+        <input type="text" class="form-control" name="answer8"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>Any recent injuries or traumas?</label></br>
+        <input type="text" class="form-control" name="answer9"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>Any family history?</label></br>
+        <input type="text" class="form-control" name="answer10"> </br>
+      </div>
+
+      <div class="form-group">
+        <label>Any trouble in the daily routine?</label></br>
+        <input type="text" class="form-control" name="answer11"></br>
+      </div>
+  
+      <button type="submit" class="btn-lg btn-block btn btn-outline-primary mb-5">
+        Enter
+      </button>
+  
+    </form>
+  </div>
+{% endblock %}

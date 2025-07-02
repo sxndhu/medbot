@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Disease Prediction {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1 class="display-3">Symptom Checker</h1>
+</br>
+  {% if prediction_is %}
+  <div class="message-text">
+    <div class="p-3 mb-2 bg-warning text-emphasis-warning">
+      <div class="message-content">
+        The possible diagnoses is of {{ prediction_is }}
+      </br>
+        The accuracy of this is {{ accuracy }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <form class="row" method="POST" action="{% url 'checksymptom' %}">
+
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <button type="submit" class="btn-lg btn-block btn btn-outline-danger mb-5">
+      Predict
+    </button>
+
+  </form>
+</div>
+{% endblock %}
